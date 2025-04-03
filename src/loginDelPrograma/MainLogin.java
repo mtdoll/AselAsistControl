@@ -4,6 +4,8 @@
  */
 package loginDelPrograma;
 
+import java.awt.Color;
+
 /**
  *
  * @author mt
@@ -28,53 +30,172 @@ public class MainLogin extends javax.swing.JFrame {
   private void initComponents() {
 
     background = new javax.swing.JPanel();
-    jPanel1 = new javax.swing.JPanel();
-    jPanel2 = new javax.swing.JPanel();
+    malugapa_fg_label = new javax.swing.JLabel();
+    srl_label = new javax.swing.JLabel();
+    firm_bg_panel = new javax.swing.JLabel();
+    msg_01 = new javax.swing.JLabel();
+    msg_02 = new javax.swing.JLabel();
+    teoponte_logo = new javax.swing.JLabel();
+    user_box = new javax.swing.JTextField();
+    separator = new javax.swing.JSeparator();
+    password_box = new javax.swing.JPasswordField();
+    enter_btn = new javax.swing.JPanel();
+    enter_btn_fg_lb = new javax.swing.JLabel();
+    enter_btn_fg_lb1 = new javax.swing.JLabel();
 
     setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+    setResizable(false);
 
     background.setBackground(new java.awt.Color(255, 255, 255));
+    background.setForeground(new java.awt.Color(255, 255, 255));
+    background.setMaximumSize(new java.awt.Dimension(1024, 720));
+    background.setMinimumSize(new java.awt.Dimension(800, 600));
+    background.setPreferredSize(new java.awt.Dimension(1024, 600));
     background.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-    javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-    jPanel1.setLayout(jPanel1Layout);
-    jPanel1Layout.setHorizontalGroup(
-      jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addGap(0, 230, Short.MAX_VALUE)
+    malugapa_fg_label.setFont(new java.awt.Font("Roboto Mono", 1, 48)); // NOI18N
+    malugapa_fg_label.setForeground(new java.awt.Color(255, 255, 255));
+    malugapa_fg_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+    malugapa_fg_label.setText("MALUGAPA");
+    background.add(malugapa_fg_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 260, 60));
+
+    srl_label.setFont(new java.awt.Font("Roboto Mono Medium", 1, 24)); // NOI18N
+    srl_label.setForeground(new java.awt.Color(60, 63, 65));
+    srl_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+    srl_label.setText("S.R.L.");
+    background.add(srl_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 260, -1));
+
+    firm_bg_panel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+    firm_bg_panel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/loginImg/3661943.jpg"))); // NOI18N
+    firm_bg_panel.setText("jLabel2");
+    firm_bg_panel.setMaximumSize(new java.awt.Dimension(260, 620));
+    firm_bg_panel.setMinimumSize(new java.awt.Dimension(260, 620));
+    firm_bg_panel.setPreferredSize(new java.awt.Dimension(260, 620));
+    background.add(firm_bg_panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 260, 620));
+
+    msg_01.setFont(new java.awt.Font("Roboto Black", 0, 18)); // NOI18N
+    msg_01.setForeground(new java.awt.Color(0, 0, 0));
+    msg_01.setText("INICIANDO SESION");
+    background.add(msg_01, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 370, -1, -1));
+
+    msg_02.setFont(new java.awt.Font("Roboto Black", 0, 18)); // NOI18N
+    msg_02.setForeground(new java.awt.Color(0, 0, 0));
+    msg_02.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+    msg_02.setText("REGISTRA TU ASISTENCIA");
+    background.add(msg_02, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 350, 770, -1));
+
+    teoponte_logo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+    teoponte_logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/loginImg/teoponte_logo.png"))); // NOI18N
+    background.add(teoponte_logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 0, 760, 400));
+
+    user_box.setBackground(new java.awt.Color(255, 255, 255));
+    user_box.setForeground(new java.awt.Color(204, 204, 204));
+    user_box.setText("usuario");
+    user_box.setToolTipText("");
+    user_box.addMouseListener(new java.awt.event.MouseAdapter() {
+      public void mousePressed(java.awt.event.MouseEvent evt) {
+        user_boxMousePressed(evt);
+      }
+    });
+    background.add(user_box, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 420, 240, -1));
+    background.add(separator, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 400, 240, 10));
+
+    password_box.setBackground(new java.awt.Color(255, 255, 255));
+    password_box.setForeground(new java.awt.Color(204, 204, 204));
+    password_box.setText("jPasswordField1");
+    password_box.addMouseListener(new java.awt.event.MouseAdapter() {
+      public void mousePressed(java.awt.event.MouseEvent evt) {
+        password_boxMousePressed(evt);
+      }
+    });
+    background.add(password_box, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 450, 240, -1));
+
+    enter_btn.setBackground(new java.awt.Color(0, 19, 131));
+
+    enter_btn_fg_lb.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+    enter_btn_fg_lb.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+    enter_btn_fg_lb.setText("INGRESAR");
+    enter_btn_fg_lb.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+    enter_btn_fg_lb.addMouseListener(new java.awt.event.MouseAdapter() {
+      public void mouseClicked(java.awt.event.MouseEvent evt) {
+        enter_btn_fg_lbMouseClicked(evt);
+      }
+    });
+
+    enter_btn_fg_lb1.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+    enter_btn_fg_lb1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+    enter_btn_fg_lb1.setText("INGRESAR");
+    enter_btn_fg_lb1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+    javax.swing.GroupLayout enter_btnLayout = new javax.swing.GroupLayout(enter_btn);
+    enter_btn.setLayout(enter_btnLayout);
+    enter_btnLayout.setHorizontalGroup(
+      enter_btnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addGroup(enter_btnLayout.createSequentialGroup()
+        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        .addGroup(enter_btnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+          .addComponent(enter_btn_fg_lb, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+          .addComponent(enter_btn_fg_lb1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
+        .addContainerGap())
     );
-    jPanel1Layout.setVerticalGroup(
-      jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addGap(0, 630, Short.MAX_VALUE)
+    enter_btnLayout.setVerticalGroup(
+      enter_btnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, enter_btnLayout.createSequentialGroup()
+        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        .addComponent(enter_btn_fg_lb)
+        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        .addComponent(enter_btn_fg_lb1)
+        .addContainerGap())
     );
 
-    background.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, -10, 230, 630));
-
-    javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-    jPanel2.setLayout(jPanel2Layout);
-    jPanel2Layout.setHorizontalGroup(
-      jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addGap(0, 600, Short.MAX_VALUE)
-    );
-    jPanel2Layout.setVerticalGroup(
-      jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addGap(0, 100, Short.MAX_VALUE)
-    );
-
-    background.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 0, 600, -1));
+    background.add(enter_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 490, 100, 30));
 
     javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
     getContentPane().setLayout(layout);
     layout.setHorizontalGroup(
       layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addComponent(background, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+      .addGroup(layout.createSequentialGroup()
+        .addContainerGap()
+        .addComponent(background, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        .addContainerGap())
     );
     layout.setVerticalGroup(
       layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addComponent(background, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+      .addGroup(layout.createSequentialGroup()
+        .addContainerGap()
+        .addComponent(background, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        .addContainerGap())
     );
 
     pack();
+    setLocationRelativeTo(null);
   }// </editor-fold>//GEN-END:initComponents
+
+  private void user_boxMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_user_boxMousePressed
+    if(user_box.getText().equals("usuario")){
+	  user_box.setText("");
+	  user_box.setForeground(Color.black);
+	}
+	if(String.valueOf(password_box.getPassword()).isEmpty()) {
+	password_box.setText("********");
+	password_box.setForeground(Color.gray);
+	}
+  }//GEN-LAST:event_user_boxMousePressed
+
+  private void password_boxMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_password_boxMousePressed
+    if(String.valueOf(password_box.getPassword()).equals("********")) {
+	user_box.setText("usuario");
+	user_box.setForeground(Color.gray);
+	}
+	if(user_box.getText().isEmpty()) {
+	password_box.setText("");
+	password_box.setForeground(Color.black);
+	}
+  }//GEN-LAST:event_password_boxMousePressed
+
+  private void enter_btn_fg_lbMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_enter_btn_fg_lbMouseClicked
+    javax.swing.JOptionPane.showMessageDialog(this, "Intento de login con los datos:\nUsuario: " + user_box.getText() + "\nContraseña: " + String.valueOf(password_box.getPassword()), "LOGIN", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+  }//GEN-LAST:event_enter_btn_fg_lbMouseClicked
 
   /**
    * @param args the command line arguments
@@ -113,7 +234,17 @@ public class MainLogin extends javax.swing.JFrame {
 
   // Variables declaration - do not modify//GEN-BEGIN:variables
   private javax.swing.JPanel background;
-  private javax.swing.JPanel jPanel1;
-  private javax.swing.JPanel jPanel2;
+  private javax.swing.JPanel enter_btn;
+  private javax.swing.JLabel enter_btn_fg_lb;
+  private javax.swing.JLabel enter_btn_fg_lb1;
+  private javax.swing.JLabel firm_bg_panel;
+  private javax.swing.JLabel malugapa_fg_label;
+  private javax.swing.JLabel msg_01;
+  private javax.swing.JLabel msg_02;
+  private javax.swing.JPasswordField password_box;
+  private javax.swing.JSeparator separator;
+  private javax.swing.JLabel srl_label;
+  private javax.swing.JLabel teoponte_logo;
+  private javax.swing.JTextField user_box;
   // End of variables declaration//GEN-END:variables
 }
